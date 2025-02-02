@@ -1,13 +1,14 @@
-# Polmask - Reddit Political Content Masker
+# Polmask - Political Content Masker
 
-This project is a browser extension that helps users avoid political content on Reddit by masking it. Users can configure which websites the extension operates on by modifying the `manifest.json` file.
+This project is a browser extension that helps users avoid political content on the web by masking it. Users can configure which websites the extension operates on by modifying domains using the extension options page.
+**Currently this works on FIREFOX ONLY**
 
 ---
 
 ## Features
 
-- **Mask Political Content:** Automatically hides political content from Reddit.
-- **Customizable:** Adjust the extension to work on different websites by modifying the `manifest.json` file.
+- **Mask Political Content:** Automatically hides political content.
+- **Customizable:** Adjust the extension to work on different websites by adding/removing domains on the options page.
 - **Easy to Use:** Simple interface with minimal setup required.
 
 ---
@@ -36,27 +37,20 @@ This project is a browser extension that helps users avoid political content on 
 ## Usage
 
 1. **Activate the Extension:**
-   - Once installed, the extension will begin masking political content on Reddit automatically.
+   - Once installed, the extension will not mask content until you add domains with the "options" page
 
 2. **Adjust Configuration:**
-   - Modify `manifest.json` to add or remove supported websites.
-   - Example modification in `manifest.json`:
-     ```json
-     "permissions": [
-         "https://www.reddit.com/*",
-         "https://example.com/*"
-     ]
+   - Click on manage extension.
+   - Click on options to add or remove domains where you would like the political content blocked
+   - Example: "reddit.com" or "facebook.com"
      ```
-
-3. **Reload the Extension:**
-   - After making changes to `manifest.json`, reload the extension via the extension management page.
 
 ---
 
 ## Development
 
 1. **Prerequisites:**
-   - Node.js and npm (optional, if additional tooling is used).
+   - Not much, it's pretty simple
 
 2. **Folder Structure:**
    ```
@@ -65,6 +59,8 @@ This project is a browser extension that helps users avoid political content on 
    |-- polmask.js
    |-- README.md
    |-- polmask_icon.png
+   |-- options.html
+   |-- options.js
    ```
 
 3. **Key Files:**
@@ -72,6 +68,8 @@ This project is a browser extension that helps users avoid political content on 
    - `polmask.js`: Detects political keywords and masks content.
    - `README.md`: You are reading this right now.
    - `polmask_icon.png`: Icon for extension.
+   - `options.html`: Options page for configuring domains.
+   - `options.js`: Handles CRUD logic for domain functionality.
 
 
 

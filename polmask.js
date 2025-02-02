@@ -38,11 +38,25 @@ function getLorem(filePath) {
 	.then(response => response.json())
 }
 
-getKeywords("https://gist.githubusercontent.com/JeremyMorgan/77bcfb149837810471b7e8e0efe6eb4a/raw/391572be0e5044a049dd932218be423097daa16d/mutethisshit.txt")
+function loadExtension() {
+	getKeywords("https://gist.githubusercontent.com/JeremyMorgan/77bcfb149837810471b7e8e0efe6eb4a/raw/391572be0e5044a049dd932218be423097daa16d/mutethisshit.txt")
 	.then(lines => keywords = keywords.concat(lines));
 	
-getLorem("https://baconipsum.com/api/?type=meat-and-filler")
+	getLorem("https://baconipsum.com/api/?type=meat-and-filler")
 	.then(loremArray => lorem = loremArray);
 	
-setInterval(() => replaceTextWithLorem(), 1000);
+	setInterval(() => replaceTextWithLorem(), 500);
+}
+
+
+
+(async () => {
+    const { allowedWebsites } = await browser.storage.sync.get('allowedWebsites');
+    const currentHost = window.location.hostname;
+
+    // Check if the current website matches any entry in the allowed list
+    if (allowedWebsites && allowedWebsites.some(site => currentHost.includes(site))) {
+        loadExtension();
+    }
+})();
 

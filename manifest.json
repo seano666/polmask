@@ -3,21 +3,31 @@
   "name": "PolMask",
   "version": "1.0",
 
-  "description": "Obscures political content on Reddit",
+  "description": "Obscures political content on the web",
   
   "permissions": [
     "https://gist.githubusercontent.com/*",
-	"https://baconipsum.com/*"
+	"https://baconipsum.com/*",
+	"storage",
+	"webRequest"
     ],
-  
+  "options_page": "options.html",
   "content_scripts": [
     {
-      "matches": ["*://*.reddit.com/*"],
-      "js": ["polmask.js"]
+      "matches": ["<all_urls>"],
+      "js": ["polmask.js"],
+	  "run_at": "document_idle"
     }
   ],
   
   "icons": {
 	  "96": "polmask_icon.png"
-  }
+  },
+  
+  "browser_specific_settings": {
+        "gecko": {
+            "id": "polmask@yourdomain.com",
+            "strict_min_version": "91.0"
+        }
+    }
 }
