@@ -64,12 +64,14 @@ This project is a browser extension that helps users avoid political content on 
    |-- manifest.json
    |-- polmask.js
    |-- README.md
+   |-- polmask_icon.png
    ```
 
 3. **Key Files:**
    - `manifest.json`: Configuration file for the extension.
    - `polmask.js`: Detects political keywords and masks content.
    - `README.md`: You are reading this right now.
+   - `polmask_icon.png`: Icon for extension.
 
 
 

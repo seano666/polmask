@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "PolMask",
+  "version": "1.0",
+
+  "description": "Obscures political content on Reddit",
+  
+  "permissions": [
+    "https://gist.githubusercontent.com/*",
+	"https://baconipsum.com/*"
+    ],
+  
+  "content_scripts": [
+    {
+      "matches": ["*://*.reddit.com/*"],
+      "js": ["polmask.js"]
+    }
+  ],
+  
+  "icons": {
+	  "96": "polmask_icon.png"
+  }
+}
