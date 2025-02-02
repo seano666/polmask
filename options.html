@@ -5,8 +5,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 20px auto;
+            width: 100%;
+            margin: 5px auto;
             background-color: #f9f9f9;
             padding: 20px;
             border-radius: 8px;
@@ -48,6 +48,8 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+			font-weight: bold;
+			font-size: 1.5em;
         }
         .delete-button {
             color: white;
@@ -60,10 +62,14 @@
         .delete-button:hover {
             background-color: #c82333;
         }
+		div {
+			width: 90%;
+		}
     </style>
 </head>
 <body>
-    <h1>Configure Allowed Domains</h1>
+    <h1>PolMask options</h1>
+    <h3>Configure Domains to mask</h3>
 
     <div>
         <input type="text" id="new-domain" placeholder="Enter domain name (e.g., example.com)" />
